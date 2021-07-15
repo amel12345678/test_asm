@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'modifier-produit/:id',component:UpdateProduitComponent},
   {path:'ajouter-categorie',component:AjouterCategorieComponent},
   {path:'modifier-categorie/:id',component:UpdateCategorieComponent},
- // {path:'gerer-users',component:UserComponent}
+
 ];
 
 @NgModule({

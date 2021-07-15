@@ -1,0 +1,13 @@
+<div class="container">
+    <h2 class="my-3">Modify category</h2>
+    <form class="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nom">Category name</label>
+            <input type="text" name="nom" class="form-control">
+            <!--[(ngModel)]="categorie.nom"--> 
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+    </form>
+</div>

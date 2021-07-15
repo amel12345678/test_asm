@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="row my-3">
+      <div class="col-xl-4 col-lg-5 col-sm-12 col-xs-12">
+        <h2 class="text-center">List of categories<span class="badge badge-info">{{categories?.length}}</span></h2>
+        <button class="btn btn-primary btn-sm my-1"[routerLink]="['/ajouter-categorie']">Add a category</button>
+        <table class="table table-bordered text-center">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th >Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let categorie of categories">
+              <td>{{categorie.id}}</td>
+              <td>{{categorie.nom}}</td>
+                <td >
+                  <button class="btn btn-warning btn-sm mx-2" [routerLink]="['/modifier-categorie',categorie.id]">Edit</button>
+                  <button class="btn btn-danger btn-sm" (click)="deleteCategorie(categorie)">Delete</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xl-8 col-lg-7 col-sm-12 col-xs-12">
+        <h2 class="text-center">List of products <span class="badge badge-info">{{produits?.length}}</span></h2>
+        <button class="btn btn-primary btn-sm my-1" [routerLink]="['/ajouter-produit/']">Add a product</button>
+        <table class="table table-bordered text-center">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Buying price</th>
+              <th scope="col">Selling price</th>
+              <th scope="col">Category</th>
+              <th scope="col" >Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let produit of produits">
+              <td>{{produit.id}}</td>
+              <td>{{produit.nom}}</td>
+              <td>{{produit.prixAchat}} DT</td>
+              <td>{{produit.prixVente}} DT</td>
+              <td>{{produit.categorie}}</td>
+                <td >
+                  <button class="btn btn-warning btn-sm mx-2" [routerLink]="['/modifier-produit',produit.id]">Edit</button>
+                  <button class="btn btn-danger btn-sm" (click)="deleteProduit(produit)">Delete</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
